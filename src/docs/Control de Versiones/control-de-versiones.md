@@ -46,7 +46,6 @@ Su propósito es llevar registro de los cambios en archivos de computadora inclu
 * Git add
 * Git commit
 * Git log
- 
 
  
  
