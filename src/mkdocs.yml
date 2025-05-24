@@ -4,8 +4,6 @@ theme:
   font:
     text: Merriwaether Sans
     code: Red Hat Mono
-  logo: /assets/altLogo.png
-  favicon: /assets/favicon.png
   palette:
   #darkmode
     - scheme: slate
