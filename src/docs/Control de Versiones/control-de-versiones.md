@@ -11,7 +11,7 @@ Existe un repositorio centralizado de todo el código, del cual es responsable u
 Ejemplos: CVS, Subversión o Team Foundation Server.
 
 #### SubVersion
-Apache Subversion  (abreviado frecuentemente como SVN, por el comando svn) 
+Apache Subversion  (abreviado frecuentemente como SVN, por el comando svn)
 
 Es una herramienta de control de versiones open source basada en un repositorio cuyo funcionamiento se asemeja enormemente al de un sistema de ficheros. Es software libre bajo una licencia de tipo Apache/BSD.
 
