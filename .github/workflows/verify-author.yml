@@ -12,7 +12,7 @@ jobs:
       - name: Verificar que el PR venga del usuario autorizado
         run: |
           echo "Autor del PR: ${{ github.event.pull_request.user.login }}"
-          if [[ "${{ github.event.pull_request.user.login }}" != "cromalido" ]]; then
+          if [[ "${{ github.event.pull_request.user.login }}" != "cromatido" ]]; then
             echo "Solo 'Willliams' puede fusionar este PR."
             echo "RESULTADO_VERIFICACION=failure" >> $GITHUB_ENV
             exit 1
