@@ -16,4 +16,4 @@ jobs:
             echo "⛔ Solo 'Williamw' puede fusionar este PR."
             exit 1
           fi
-          echo "✅ Usuario autorizado. Continuando..."
+          echo "✅ Usuario autorizado. Continuando...."
