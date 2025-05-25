@@ -1,0 +1,19 @@
+name: Verificar autor del PR
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  restrict-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verifica que el PR venga del usuario autorizado
+        run: |
+          echo "Autor del PR: ${{ github.event.pull_request.user.login }}"
+          if [[ "${{ github.event.pull_request.user.login }}" != "cromatido" ]]; then
+            echo "⛔ Solo 'Williamw' puede fusionar este PR."
+            exit 1
+          fi
+          echo "✅ Usuario autorizado. Continuando..."
