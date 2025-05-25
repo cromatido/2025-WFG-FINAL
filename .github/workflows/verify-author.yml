@@ -9,11 +9,34 @@ jobs:
   restrict-merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Verifica que el PR venga del usuario autorizado
+      - name: Verificar que el PR venga del usuario autorizado
         run: |
           echo "Autor del PR: ${{ github.event.pull_request.user.login }}"
-          if [[ "${{ github.event.pull_request.user.login }}" != "cromatido" ]]; then
-            echo "⛔ Solo 'Williamw' puede fusionar este PR."
+          if [[ "${{ github.event.pull_request.user.login }}" != "cromalido" ]]; then
+            echo "Solo 'Willliams' puede fusionar este PR."
+            echo "RESULTADO_VERIFICACION=failure" >> $GITHUB_ENV
             exit 1
           fi
-          echo "✅ Usuario autorizado. Continuando...."
+          echo "Usuario autorizado. Continuando..."
+          echo "RESULTADO_VERIFICACION=exito" >> $GITHUB_ENV
+
+      - name: Reportar estado a GitHub
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const resultado = process.env.RESULTADO_VERIFICACION;
+            const exito = resultado === 'exito';
+            await github.rest.checks.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'Verificar autor del PR',
+              head_sha: context.sha,
+              status: 'completed',
+              conclusion: exito ? 'success' : 'failure',
+              output: {
+                title: 'Resultado de la verificación del autor',
+                summary: exito ? 'El autor está autorizado.' : 'El autor NO está autorizado.',
+              },
+            });
+        env:
+          RESULTADO_VERIFICACION: ${{ env.RESULTADO_VERIFICACION }}
