@@ -1,6 +1,6 @@
----
-title: Oscar Fanfan
----
-# hola Soy Oscar Fanfan
-## jola Oscar Fanfan
-### jolita Oscar Fanfan
+# Oscar Fanfan
+Desarrollador movil, con experiencias en aplicaciones cross-plarform
+
+# hobbies
+- Video juegos 
+- Escuchar musica
