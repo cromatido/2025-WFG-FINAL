@@ -1,3 +1,7 @@
+---
+title: Oscar Fanfan
+---
+
 # Oscar Fanfan
 Desarrollador movil, con experiencias en aplicaciones cross-plarform
 
